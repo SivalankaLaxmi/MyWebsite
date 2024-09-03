@@ -41,11 +41,15 @@
           <div class="text-white" data-mdb-theme="dark" style="align-self: center;">
             <h1 class="mb-3">Sivalanka Laxmi... Welcomes you...</h1>
             <ul>
-              <li>Home</li>
-              <li>About</li>
-              <li>Resume</li>
-              <li>Contact</li>
+              <li>
+                <a href=""> Home </a>
+              </li>
+              <li><a routerLink="/about" routerLinkActive="active" (click)="about()"> About </a></li>
+               <!-- <li><button (click)="about()">About</button></li> -->
+              <li><a href=""> Resume </a></li>
+              <li><a href=""> Contact </a></li>
             </ul>
+            <router-outlet></router-outlet>
              <!-- <h5 class="mb-4">Best & free guide of responsive web design</h5> -->
            <!-- <a class="btn btn-outline-light btn-lg m-2" data-mdb-ripple-init href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button"
                rel="nofollow" target="_blank">Start tutorial</a>
@@ -55,7 +59,7 @@
         </div>
       
       </div>
-      <div id="self">
+      <div id="self" *ngIf="!Tag">
         <h2>Hi! I am Laxmi,</h2>
         <h5>a motivated Full Stack Java Developer with a passion for coding and a year of experience in building robust applications.
 
