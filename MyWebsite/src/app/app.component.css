@@ -4,6 +4,10 @@ h1 {
   font-style: normal;
   color: aliceblue;
   align-items: center;
+  position: absolute;
+  top: 93px;
+  right: 55px;
+  font-family: revert;
 }
 
 #self {
@@ -38,3 +42,15 @@ li a {
   text-decoration: none;
 }
 
+#image{
+  height: 279px;
+  left: 126px;
+    top: 120px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.img-fluid{
+  width: 221vh;
+  height: 90vh;
+}

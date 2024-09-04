@@ -1,3 +1,15 @@
-p {
-    color: aliceblue;
-}
+
+#self {
+    position: absolute;
+    right: 20%;
+    margin-left: 55%;
+    
+  }
+
+ h2, h5 {
+    position: relative;
+    /* bottom: -90px; */
+    top: 120px;
+    left: 166px;
+    font-size: initial;
+  }
