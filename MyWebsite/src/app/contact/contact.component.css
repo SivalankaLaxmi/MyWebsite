@@ -1,0 +1,12 @@
+#contact{
+    right: 20%;
+    position: absolute;
+    top: 200px;
+    color: bisque;
+    border-radius: 10%;
+    width: 30%;
+}
+
+#call {
+    height: 30px;
+}
