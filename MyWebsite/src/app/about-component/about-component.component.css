@@ -3,6 +3,7 @@
     position: absolute;
     right: 30%;
     margin-left: 40%;
+    height: 50%;
     
   }
 
@@ -12,4 +13,5 @@
     top: 120px;
     left: 166px;
     font-size: initial;
+    color: aliceblue;
   }
