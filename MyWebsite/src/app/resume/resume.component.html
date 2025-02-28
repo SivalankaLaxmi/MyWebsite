@@ -1,1 +1,18 @@
-<p>resume works!</p>
+
+
+<div>
+    <h2>Upload a File</h2>
+    <input type="file" (change)="onFileSelected($event)" />
+    <button (click)="onUpload()">Upload</button>
+    <p>{{ message }}</p>
+  
+    <hr>
+    
+
+    <h3 *ngIf = "filePresent">{{selectedFile?.name}}</h3> 
+    
+
+    <h2>Download a File</h2>
+    <input type="text" #filename placeholder="Enter filename" />
+    <button (click)="onDownload(filename.value)">Download</button>
+  </div>
