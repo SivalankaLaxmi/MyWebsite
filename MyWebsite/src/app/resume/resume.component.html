@@ -1,18 +1,20 @@
-
-
 <div>
-    <h2>Upload a File</h2>
-    <input type="file" (change)="onFileSelected($event)" />
-    <button (click)="onUpload()">Upload</button>
-    <p>{{ message }}</p>
-  
-    <hr>
-    
+  <h2>Upload a File</h2>
+  <input type="file" (change)="onFileSelected($event)" />
+  <button (click)="onUpload()">Upload</button>
+  <p>{{ message }}</p>
 
-    <h3 *ngIf = "filePresent">{{selectedFile?.name}}</h3> 
-    
+  <hr>
 
-    <h2>Download a File</h2>
-    <input type="text" #filename placeholder="Enter filename" />
-    <button (click)="onDownload(filename.value)">Download</button>
-  </div>
+  <h3 *ngIf="filePresent">{{selectedFile?.name}}</h3>
+  <a *ngIf="filePresent" [href]="selectedFile?.name" target="_blank">View File</a>
+
+  <hr>
+
+  <!-- Displaying the file (PDF or Image) -->
+  <div id="fileDisplayContainer"></div>
+
+  <h2>Download a File</h2>
+  <input type="text" #filename placeholder="Enter filename" />
+  <button (click)="onDownload(filename.value)">Download</button>
+</div>

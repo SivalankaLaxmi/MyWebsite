@@ -21,7 +21,7 @@ export class ResumeComponent {
   onFileSelected(event: any): void {
     
     this.selectedFile = event.target.files[0];
-    console.log("file selected", this.selectedFile?.name)
+    console.log("file selected", this.selectedFile)
     if(this.selectedFile != null) {
       this.filePresent = true;
     }
@@ -42,15 +42,26 @@ export class ResumeComponent {
 
   // Download the file
   onDownload(filename: string): void {
-    console.log("downloaded", filename);
-    this.resumeUploadService.downloadFile(filename).subscribe(blob => {
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      a.click();
-      window.URL.revokeObjectURL(url);
-    });
-  }
+  console.log("downloaded", filename);
+  this.resumeUploadService.downloadFile(filename).subscribe(blob => {
+    const url = window.URL.createObjectURL(blob);
+
+    // Check if the file is an image
+    const fileType = filename.split('.').pop()?.toLowerCase();
+    if (fileType === 'jpg' || fileType === 'jpeg' || fileType === 'png' || fileType === 'gif') {
+      const img: HTMLImageElement = document.createElement('img');
+      img.src = url;
+      img.width = 500;  // Set image width or adjust it
+      img.height = 500; // Set image height or adjust it
+      document.body.appendChild(img);  // Add the image to the document
+    } else {
+      const iframe: HTMLIFrameElement = document.createElement('iframe');
+      iframe.src = url;
+      iframe.width = '100%';
+      iframe.height = '600px'; // Adjust height for other files like PDFs
+      document.body.appendChild(iframe);  // Add the iframe to the document
+    }
+  });
+}
 
 }

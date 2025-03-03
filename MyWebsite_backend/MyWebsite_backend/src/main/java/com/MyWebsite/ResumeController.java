@@ -1,6 +1,7 @@
 package com.MyWebsite;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -44,9 +45,11 @@ public class ResumeController {
 	    	Path filePath = Paths.get(UPLOAD_DIR, filename);
 	        byte[] fileContent = Files.readAllBytes(filePath);
 
+	        String contentType = Files.probeContentType(filePath);
+	        
 	        return ResponseEntity.ok()
 	                .header("Content-Disposition", "attachment; filename=" + filename)
-	                .body(fileContent);
-	    }
+	                .contentType(MediaType.parseMediaType(contentType))
+	                .body(fileContent);	    }
 
 }
