@@ -1,0 +1,42 @@
+h1 {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: aliceblue;
+    align-items: center;
+    margin-left: 3%;
+  }
+  
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    bottom: 1px;
+    background-color: black;
+    
+  }
+  
+  li {
+    float: right;
+    color: aliceblue;
+    display: block;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  .mask {
+    
+    height: 105px;
+  }

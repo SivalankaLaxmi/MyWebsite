@@ -1,0 +1,17 @@
+
+#self {
+    position: absolute;
+    right: 30%;
+    margin-left: 40%;
+    height: 50%;
+    
+  }
+
+ h2, h5 {
+    position: relative;
+    /* bottom: -90px; */
+    top: 120px;
+    left: 166px;
+    font-size: initial;
+    color: aliceblue;
+  }
